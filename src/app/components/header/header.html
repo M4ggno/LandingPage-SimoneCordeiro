@@ -1,1 +1,21 @@
-<p>header works!</p>
+<header class="flex items-center justify-between px-6 py-4 bg-marfim sticky top-0 z-50 shadow-sm">
+
+  <img
+    src="../../../icons/logo-SC.svg"
+    alt="Simone Cordeiro - Psicóloga"
+    class="h-10 md:h-12"
+  >
+
+  <span class="font-titulo text-marrom text-sm md:text-base block">Simone Cordeiro</span>
+
+  <a
+    [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
+    target="_blank"
+    rel="noopener"
+    class="flex items-center gap-2 bg-sage text-marfim px-4 py-2 md:px-5 md:py-2.5 rounded-full font-corpo font-medium text-sm md:text-base hover:bg-marrom transition-all duration-300 hover:scale-105"
+  >
+<img src="icons/whatsapp.svg" alt="" class="w-4 h-4 md:w-5 md:h-5" />
+    Agendar consulta
+  </a>
+
+</header>

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { Profile } from '../../core/profile';
 
 @Component({
   selector: 'app-header',
-  imports: [],
   templateUrl: './header.html',
-  styleUrl: './header.css',
+  styleUrl: './header.css'
 })
-export class Header {}
+export class Header {
+  constructor(public profile: Profile) {}
+}
