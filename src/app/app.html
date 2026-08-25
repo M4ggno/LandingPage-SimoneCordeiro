@@ -1,1 +1,19 @@
+@if (showIntro()) {
+  <div
+    class="fixed inset-0 z-[100] bg-marrom flex items-center justify-center intro-overlay"
+    [class.intro-exit]="introExiting()"
+    (animationend)="onWipeEnd($event)"
+  >
+    <div class="intro-particle intro-particle-1"></div>
+    <div class="intro-particle intro-particle-2"></div>
+    <div class="intro-particle intro-particle-3"></div>
+
+    <img
+      src="/icons/logo-SC.webp"
+      alt="Simone Cordeiro"
+      class="w-50 md:w-40 intro-logo"
+    >
+  </div>
+}
+
 <router-outlet></router-outlet>

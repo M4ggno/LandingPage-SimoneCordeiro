@@ -7,5 +7,7 @@ export class Profile {
   crp = 'CRP 13/7004';
   whatsapp = '5583999063132';
   instagramProfissional = 'https://instagram.com/psico.simonecordeiro';
+  cidade = 'Patos - PB';
+  clinica = 'Centro clínico Humanizzar';
   // ... resto dos dados do briefing
 }
