@@ -9,5 +9,5 @@ export class Profile {
   instagramProfissional = 'https://instagram.com/psico.simonecordeiro';
   cidade = 'Patos - PB';
   clinica = 'Centro clínico Humanizzar';
-  // ... resto dos dados do briefing
+  googleMaps = 'https://maps.app.goo.gl/1dM4fcKCRP431rNMA';
 }

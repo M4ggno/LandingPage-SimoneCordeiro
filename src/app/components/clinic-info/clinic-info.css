@@ -1,0 +1,33 @@
+.anim-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.anim-item.play-anim {
+  animation: fade-in-up 600ms ease-out var(--delay, 0ms) both;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-hover {
+  transition: transform 300ms ease-out, box-shadow 300ms ease-out, border-color 300ms ease-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px -8px rgba(59, 47, 42, 0.15);
+  border-color: rgba(201, 168, 118, 0.4);
+}
+.card-active {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px -8px rgba(59, 47, 42, 0.15);
+  border-color: rgba(201, 168, 118, 0.4);
+}

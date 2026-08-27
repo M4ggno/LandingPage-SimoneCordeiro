@@ -1,42 +1,43 @@
 <section id="sobre" class="bg-marfim px-6 pt-8 pb-20 md:pt-16 md:pb-28">
-  <div class="max-w-4xl mx-auto">
+  <div appAnimateOnScroll class="max-w-4xl mx-auto">
 
-    <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
+    <div class="anim-item flex items-center gap-3 mb-4 justify-center md:justify-start" style="--delay: 0ms">
       <span class="w-8 h-px bg-champagne"></span>
       <p class="font-corpo text-taupe tracking-widest text-xs uppercase">
         Sobre o atendimento
       </p>
     </div>
 
-    <h2 class="font-titulo text-marrom text-3xl md:text-4xl leading-tight mb-6 text-center md:text-left">
+    <h2 class="anim-item font-titulo text-marrom text-3xl md:text-4xl leading-tight mb-6 text-center md:text-left" style="--delay: 100ms">
       Um espaço de escuta, ciência e acolhimento
     </h2>
 
-    <p class="font-corpo text-taupe text-base md:text-lg leading-relaxed mb-12 text-center md:text-left max-w-2xl">
+    <p class="anim-item font-corpo text-taupe text-base md:text-lg leading-relaxed mb-12 text-center md:text-left max-w-2xl" style="--delay: 200ms">
       Atuo com Terapia Cognitivo-Comportamental (TCC), uma abordagem baseada em evidências científicas, unindo técnica e sensibilidade para acompanhar cada pessoa em seu processo.
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-8">
 
-      <div class="bg-white/60 rounded-2xl p-5 md:p-6 border border-taupe/10">
+      <div class="anim-item card-hover bg-white/60 rounded-2xl p-5 md:p-6 border border-taupe/10" style="--delay: 300ms">
         <p class="font-corpo text-champagne text-xs uppercase tracking-wide mb-1">Especialidade</p>
         <p class="font-titulo text-marrom text-base md:text-lg">Terapia Cognitivo-Comportamental</p>
       </div>
 
-      <div class="bg-white/60 rounded-2xl p-5 md:p-6 border border-taupe/10">
+      <div class="anim-item card-hover card-active bg-white/60 rounded-2xl p-5 md:p-6 border border-taupe/10" style="--delay: 400ms">
         <p class="font-corpo text-champagne text-xs uppercase tracking-wide mb-1">Atendimento</p>
         <p class="font-titulo text-marrom text-base md:text-lg">Presencial e online</p>
       </div>
 
-      <div class="bg-white/60 rounded-2xl p-5 md:p-6 border border-taupe/10">
+      <div class="anim-item card-hover bg-white/60 rounded-2xl p-5 md:p-6 border border-taupe/10" style="--delay: 500ms">
         <p class="font-corpo text-champagne text-xs uppercase tracking-wide mb-1">Público</p>
         <p class="font-titulo text-marrom text-base md:text-lg">Crianças, adolescentes e adultos</p>
       </div>
 
     </div>
 
-    <p class="font-corpo text-taupe text-sm text-center md:text-left">
+    <p class="anim-item font-corpo text-taupe text-sm text-center md:text-left" style="--delay: 600ms">
       Atendimento presencial em {{ profile.clinica }}, {{ profile.cidade }}.
     </p>
+
   </div>
 </section>

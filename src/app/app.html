@@ -1,6 +1,6 @@
 @if (showIntro()) {
   <div
-    class="fixed inset-0 z-[100] bg-marrom flex items-center justify-center intro-overlay"
+    class="fixed inset-0 z-100 bg-marrom flex items-center justify-center intro-overlay"
     [class.intro-exit]="introExiting()"
     (animationend)="onWipeEnd($event)"
   >

@@ -1,6 +1,6 @@
 <section class="relative overflow-hidden">
 
-<picture #heroImage class="absolute inset-0 w-full h-[120%] -top-[10%]">
+<picture #heroImage class="absolute inset-0 w-full h-[120%] top-[10%]">
   <source media="(min-width: 768px)" srcset="/../../../photos/simone-hero-desktop.webp">
   <img
     src="/../../../photos/simone-hero-mobile.webp"
@@ -11,9 +11,9 @@
 
   <!-- Versão mobile -->
   <div class="relative min-h-[85dvh] flex items-end md:hidden">
-    <div class="absolute inset-0 bg-gradient-to-t from-marrom/90 via-marrom/60 to-transparent"></div>
+    <div class="absolute inset-0 bg-linear-to-t from-marrom/90 via-marrom/60 to-transparent"></div>
     <div class="relative z-10 px-6 pb-10 w-full">
-      <div #heroContentMobile>
+      <div appAnimateOnScroll [enabled]="intro.finished()">
         <ng-container *ngTemplateOutlet="conteudo"></ng-container>
       </div>
     </div>
@@ -21,9 +21,9 @@
 
   <!-- Versão desktop -->
   <div class="hidden md:flex md:items-center md:min-h-[110dvh]">
-    <div class="absolute inset-0 bg-gradient-to-r from-marrom/95 via-marrom/60 to-transparent"></div>
+    <div class="absolute inset-0 bg-linear-to-r from-marrom/95 via-marrom/60 to-transparent"></div>
     <div class="relative z-10 px-16 w-full max-w-xl">
-      <div #heroContentDesktop>
+      <div appAnimateOnScroll [enabled]="intro.finished()">
         <ng-container *ngTemplateOutlet="conteudo"></ng-container>
       </div>
     </div>
@@ -34,39 +34,35 @@
 <!-- Conteúdo compartilhado entre as duas versões -->
 <ng-template #conteudo>
 
-  <div #heroContent>
-
-    <div class="anim-item flex items-center gap-3 mb-2 md:mb-4" style="--delay: 0ms">
-      <span class="w-8 h-px bg-champagne"></span>
-      <p class="font-corpo text-champagne tracking-widest text-xs md:text-sm uppercase">
-        {{ profile.profissao }} · TCC
-      </p>
-    </div>
-
-    <h1 class="anim-item font-titulo text-marfim text-4xl md:text-6xl leading-tight mb-4" style="--delay: 150ms">
-      Cuidar da mente também é <em class="text-champagne not-italic font-normal italic">um ato de coragem</em>.
-    </h1>
-
-    <p class="anim-item font-corpo text-marfim/90 text-sm md:text-lg max-w-md leading-relaxed mb-6" style="--delay: 300ms">
-      Atendimento com base na Terapia Cognitivo-Comportamental, para crianças, adolescentes e adultos — presencial ou online.
+  <div class="anim-item flex items-center gap-3 mb-2 md:mb-4" style="--delay: 0ms">
+    <span class="w-8 h-px bg-champagne"></span>
+    <p class="font-corpo text-champagne tracking-widest text-xs md:text-sm uppercase">
+      {{ profile.profissao }} · TCC
     </p>
+  </div>
 
-    <div class="anim-item flex flex-col sm:flex-row gap-3" style="--delay: 450ms">
-      <a [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
-        target="_blank"
-        rel="noopener"
-        class="flex items-center justify-center gap-2 bg-sage text-marfim px-6 py-3 rounded-full font-corpo font-medium hover:bg-marrom transition-all duration-300"
-      >
-        Agendar consulta
-      </a>
+  <h1 class="anim-item font-titulo text-marfim text-4xl md:text-6xl leading-tight mb-4" style="--delay: 150ms">
+    Cuidar da mente também é <em class="text-champagne not-italic font-normal">um ato de coragem</em>.
+  </h1>
 
-      <a href="#sobre"
-        class="flex items-center justify-center gap-2 border border-marfim/50 text-marfim px-6 py-3 rounded-full font-corpo hover:bg-marfim/10 transition-all duration-300"
-      >
-        Conhecer a Simone
-      </a>
-    </div>
+  <p class="anim-item font-corpo text-marfim/90 text-sm md:text-lg max-w-md leading-relaxed mb-6" style="--delay: 300ms">
+    Atendimento com base na Terapia Cognitivo-Comportamental, para crianças, adolescentes e adultos — presencial ou online.
+  </p>
 
+  <div class="anim-item flex flex-col sm:flex-row gap-3" style="--delay: 450ms">
+    <a [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center justify-center gap-2 bg-sage text-marfim px-6 py-3 rounded-full font-corpo font-medium hover:bg-marrom transition-all duration-300"
+    >
+      Agendar consulta
+    </a>
+
+    <a href="#sobre"
+      class="flex items-center justify-center gap-2 border border-marfim/50 text-marfim px-6 py-3 rounded-full font-corpo hover:bg-marfim/10 transition-all duration-300"
+    >
+      Conhecer a Simone
+    </a>
   </div>
 
 </ng-template>

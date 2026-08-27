@@ -1,1 +1,35 @@
-<p>cta-buttons works!</p>
+<section class="relative bg-marrom px-6 py-20 md:py-28 overflow-hidden">
+
+  <div class="absolute inset-0 dots-pulse"></div>
+
+  <div appAnimateOnScroll class="relative z-10 max-w-2xl mx-auto text-center">
+
+    <div class="anim-item flex items-center justify-center gap-3 mb-4" style="--delay: 0ms">
+      <span class="w-8 h-px bg-champagne"></span>
+      <p class="font-corpo text-champagne tracking-widest text-xs uppercase">
+        Dar o primeiro passo
+      </p>
+      <span class="w-8 h-px bg-champagne"></span>
+    </div>
+
+    <h2 class="anim-item font-titulo text-marfim text-3xl md:text-4xl leading-tight mb-4" style="--delay: 100ms">
+      Você não precisa ter todas as respostas para começar.
+    </h2>
+
+    <p class="anim-item font-corpo text-marfim/80 text-base md:text-lg leading-relaxed mb-8 max-w-md mx-auto" style="--delay: 200ms">
+      Marque uma conversa inicial e descubra como a terapia pode te acompanhar nesse momento.
+    </p>
+
+    <a [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
+      target="_blank"
+      rel="noopener"
+      class="anim-item cta-pulse inline-flex items-center justify-center gap-2 bg-sage text-marfim px-8 py-4 rounded-full font-corpo font-medium text-base hover:bg-champagne hover:text-marrom transition-all duration-300 hover:scale-105"
+      style="--delay: 300ms"
+    >
+      <img src="icons/whatsapp.svg" alt="" class="w-5 h-5" />
+      Agendar consulta pelo WhatsApp
+    </a>
+
+  </div>
+
+</section>
