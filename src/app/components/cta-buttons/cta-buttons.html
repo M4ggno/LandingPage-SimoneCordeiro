@@ -1,6 +1,6 @@
 <section class="relative bg-marrom px-6 py-20 md:py-28 overflow-hidden">
 
-  <div class="absolute inset-0 dots-pulse"></div>
+  <div #dotsLayer class="absolute inset-0 dots-pulse"></div>
 
   <div appAnimateOnScroll class="relative z-10 max-w-2xl mx-auto text-center">
 
@@ -23,7 +23,7 @@
     <a [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
       target="_blank"
       rel="noopener"
-      class="anim-item cta-pulse inline-flex items-center justify-center gap-2 bg-sage text-marfim px-8 py-4 rounded-full font-corpo font-medium text-base hover:bg-champagne hover:text-marrom transition-all duration-300 hover:scale-105"
+      class="anim-item cta-glow cta-pulse inline-flex items-center justify-center gap-2 bg-sage text-marfim px-8 py-4 rounded-full font-corpo font-medium text-base hover:bg-champagne hover:text-marrom transition-all duration-300 hover:scale-105"
       style="--delay: 300ms"
     >
       <img src="icons/whatsapp.svg" alt="" class="w-5 h-5" />

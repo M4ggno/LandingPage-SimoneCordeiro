@@ -1,0 +1,56 @@
+<section class="relative bg-marfim px-6 py-16 md:py-24 overflow-hidden">
+  <div appAnimateOnScroll class="max-w-5xl mx-auto flex flex-col md:flex-row md:gap-16 md:items-center">
+
+    <div class="anim-item mb-[-60px] md:mb-0 md:w-2/5 shrink-0 relative z-0" style="--delay: 0ms">
+      <img
+        src="photos/simone3.webp"
+        alt="Simone Cordeiro, psicóloga clínica"
+        class="w-full object-cover aspect-[4/5] photo-blend"
+      >
+
+    </div>
+
+    <div class="md:w-3/5 relative z-10">
+
+      <div class="anim-item flex items-center gap-3 mb-4" style="--delay: 100ms">
+        <span class="w-8 h-px bg-black"></span>
+        <p class="font-corpo text-black tracking-widest text-xs uppercase">
+          Quem sou
+        </p>
+      </div>
+
+      <h2 class="anim-item font-titulo text-champagne text-3xl md:text-4xl leading-tight mb-2" style="--delay: 150ms">
+        Olá, eu sou {{ profile.nome }}.
+      </h2>
+
+      <p class="anim-item font-corpo text-marrom text-sm tracking-wide mb-6" style="--delay: 200ms">
+        {{ profile.profissao }} · {{ profile.crp }}
+      </p>
+
+      <div class="anim-item font-corpo text-taupe text-base leading-relaxed space-y-4 mb-8" style="--delay: 250ms">
+        <p>Sou psicóloga e atuo com a Terapia Cognitivo-Comportamental (TCC), acompanhando crianças, adolescentes e adultos em diferentes momentos e desafios da vida.</p>
+        <p>Acredito que cada pessoa possui uma história única e que o processo terapêutico precisa acontecer com acolhimento, respeito e escuta, sem julgamentos e respeitando o tempo de cada paciente.</p>
+        <p>No meu trabalho, busco ajudar cada pessoa a compreender melhor seus pensamentos, emoções e comportamentos, identificando padrões que podem estar causando sofrimento e construindo novas estratégias para lidar com as dificuldades do dia a dia.</p>
+        <p>Realizo atendimentos presenciais e online, oferecendo um espaço seguro para quem deseja cuidar da saúde emocional, compreender melhor a si mesmo e desenvolver formas mais saudáveis de enfrentar os desafios da vida.</p>
+      </div>
+
+      <div class="anim-item flex flex-wrap gap-x-6 gap-y-2 mb-8 text-sm font-corpo" style="--delay: 300ms">
+        <span class="text-marrom"><strong class="text-champagne">TCC</strong> · Abordagem</span>
+        <span class="text-marrom"><strong class="text-champagne">Crianças, adolescentes e adultos</strong> · Público</span>
+        <span class="text-marrom"><strong class="text-champagne">Presencial e online</strong> · Modalidade</span>
+      </div>
+
+      <a
+        [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
+        target="_blank"
+        rel="noopener"
+        class="anim-item inline-flex items-center justify-center gap-2 bg-sage text-marfim px-6 py-3 rounded-full font-corpo font-medium hover:bg-marrom transition-all duration-300"
+        style="--delay: 350ms"
+      >
+        Agendar atendimento
+      </a>
+
+    </div>
+
+  </div>
+</section>

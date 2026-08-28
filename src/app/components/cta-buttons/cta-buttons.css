@@ -48,3 +48,10 @@
     transform: translateY(0);
   }
 }
+.anim-item.cta-pulse.play-anim {
+  animation: fade-in-up 600ms ease-out var(--delay, 0ms) both, cta-glow 2.5s ease-in-out infinite;
+}
+
+.anim-item.cta-pulse.play-anim:hover {
+  animation: fade-in-up 600ms ease-out var(--delay, 0ms) both;
+}
