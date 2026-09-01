@@ -36,7 +36,7 @@ export class AnimateOnScroll implements AfterViewInit, OnChanges {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const items = this.el.nativeElement.querySelectorAll('.anim-item');
+          const items = this.el.nativeElement.querySelectorAll('.anim-item, .anim-item-bounce');
           if (entry.isIntersecting) {
             items.forEach((item) => item.classList.add('play-anim'));
           } else {

@@ -1,0 +1,40 @@
+<section class="relative overflow-hidden bg-marfim px-6 py-16 md:py-24">
+
+  <div class="floating-dot dot-1"></div>
+  <div class="floating-dot dot-2"></div>
+  <div class="floating-dot dot-3"></div>
+  <div class="floating-dot dot-4"></div>
+
+  <div appAnimateOnScroll class="relative z-10 max-w-4xl mx-auto">
+
+    <div class="anim-item flex items-center gap-3 mb-4 justify-center md:justify-start" style="--delay: 0ms">
+      <span class="w-8 h-px bg-champagne"></span>
+      <p class="font-corpo text-taupe tracking-widest text-xs uppercase">
+        Como posso te ajudar
+      </p>
+    </div>
+
+    <h2 class="anim-item font-titulo text-marrom text-3xl md:text-4xl leading-tight mb-4 text-center md:text-left" style="--delay: 100ms">
+      Cada pessoa chega com uma história diferente
+    </h2>
+
+    <p class="anim-item font-corpo text-taupe text-base md:text-lg leading-relaxed mb-12 text-center md:text-left max-w-2xl" style="--delay: 200ms">
+      O acompanhamento psicológico pode ajudar na compreensão e no enfrentamento de diferentes questões emocionais e comportamentais.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+
+      @for (demanda of demandas; track demanda; let i = $index) {
+        <span
+          class="anim-item-bounce tag-chip tag-pulse inline-flex items-center justify-center text-center font-corpo text-sm md:text-base px-4 py-3 rounded-full border transition-all duration-300"
+          [style]="'--delay: ' + (250 + i * 60) + 'ms; --pulse-delay: ' + (i * 400) + 'ms'"
+        >
+          {{ demanda }}
+        </span>
+      }
+
+    </div>
+
+  </div>
+
+</section>

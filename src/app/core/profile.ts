@@ -10,4 +10,5 @@ export class Profile {
   cidade = 'Patos - PB';
   clinica = 'Centro clínico Humanizzar';
   googleMaps = 'https://maps.app.goo.gl/1dM4fcKCRP431rNMA';
+  lattes = 'http://lattes.cnpq.br/1214158577530395';
 }

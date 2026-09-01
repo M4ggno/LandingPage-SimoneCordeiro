@@ -1,0 +1,10 @@
+.footer-icon {
+  font-family: var(--font-corpo);
+  color: rgba(250, 247, 242, 0.7);
+  font-size: 0.875rem;
+  transition: color 300ms ease;
+}
+
+.footer-icon:hover {
+  color: var(--color-champagne);
+}

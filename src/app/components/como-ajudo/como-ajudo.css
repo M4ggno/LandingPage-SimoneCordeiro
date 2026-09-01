@@ -1,0 +1,83 @@
+.anim-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.anim-item.play-anim {
+  animation: fade-in-up 600ms ease-out var(--delay, 0ms) both;
+}
+
+.anim-item-bounce {
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+}
+
+.anim-item-bounce.play-anim {
+  animation:
+    bounce-in 550ms cubic-bezier(0.34, 1.56, 0.64, 1) var(--delay, 0ms) both,
+    tag-pulse-loop 6s ease-in-out calc(var(--delay, 0ms) + var(--pulse-delay, 0ms) + 550ms) infinite;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.8); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.tag-chip {
+  cursor: default;
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(140, 122, 107, 0.15);
+  color: var(--color-marrom);
+}
+
+.tag-chip:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 16px -6px rgba(59, 47, 42, 0.15);
+  border-color: rgba(201, 168, 118, 0.5);
+}
+
+@keyframes tag-pulse-loop {
+  0%, 92%, 100% {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(140, 122, 107, 0.15);
+    box-shadow: none;
+  }
+  4% {
+    background: rgba(156, 170, 150, 0.15);
+    border-color: rgba(156, 170, 150, 0.5);
+    box-shadow: 0 6px 14px -4px rgba(156, 170, 150, 0.3);
+  }
+}
+
+.floating-dot {
+  position: absolute;
+  border-radius: 9999px;
+  background: var(--color-champagne);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.dot-1 { width: 8px; height: 8px; top: 10%; right: 8%; animation: float-a 7s ease-in-out infinite; }
+.dot-2 { width: 6px; height: 6px; top: 70%; right: 15%; animation: float-b 8s ease-in-out infinite; }
+.dot-3 { width: 10px; height: 10px; bottom: 10%; left: 5%; animation: float-c 6.5s ease-in-out infinite; }
+.dot-4 { width: 5px; height: 5px; top: 40%; left: 3%; animation: float-a 9s ease-in-out infinite reverse; }
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -20px); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 15px); }
+}
+
+@keyframes float-c {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(15px, 20px); }
+}

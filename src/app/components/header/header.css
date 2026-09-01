@@ -1,0 +1,30 @@
+.shiny-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(250, 247, 242, 0.5) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine-sweep 3.5s ease-in-out infinite;
+}
+
+@keyframes shine-sweep {
+  0% {
+    left: -75%;
+  }
+  50%, 100% {
+    left: 125%;
+  }
+}

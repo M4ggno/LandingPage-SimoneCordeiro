@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { Profile } from '../../core/profile';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
   templateUrl: './footer.html',
-  styleUrl: './footer.css',
+  styleUrl: './footer.css'
 })
-export class Footer {}
+export class Footer {
+  ano = new Date().getFullYear();
+  constructor(public profile: Profile) {}
+}

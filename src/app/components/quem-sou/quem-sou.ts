@@ -9,5 +9,6 @@ import { AnimateOnScroll } from '../../core/animate-on-scroll';
   styleUrl: './quem-sou.css'
 })
 export class QuemSou {
+demandas: any;
   constructor(public profile: Profile) {}
 }

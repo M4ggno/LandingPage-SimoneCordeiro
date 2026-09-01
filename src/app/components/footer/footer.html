@@ -1,1 +1,36 @@
-<p>footer works!</p>
+<footer class="bg-marrom px-6 py-12 md:py-16">
+  <div class="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+
+    <div>
+      <img src="icons/logo-SC.svg" alt="Simone Cordeiro" class="h-10 mb-3" />
+      <p class="font-corpo text-marfim/70 text-sm">
+        {{ profile.profissao }} · {{ profile.crp }}
+      </p>
+      <p class="font-corpo text-marfim/50 text-xs mt-1">
+        {{ profile.clinica }} — {{ profile.cidade }}
+      </p>
+    </div>
+
+    <div class="flex gap-4">
+      <a [href]="profile.instagramProfissional" target="_blank" rel="noopener" class="footer-icon flex items-center gap-2">
+        <img src="icons/instagram.svg" alt="" class="w-5 h-5" />
+        Instagram
+      </a>
+      <a [href]="profile.lattes" target="_blank" rel="noopener" class="footer-icon flex items-center gap-2">
+        <img src="icons/lattes.svg" alt="" class="w-5 h-5" />
+        Lattes
+      </a>
+      <a [href]="'https://wa.me/' + profile.whatsapp" target="_blank" rel="noopener" class="footer-icon flex items-center gap-2">
+        <img src="icons/whatsapp.svg" alt="" class="w-5 h-5" />
+        WhatsApp
+      </a>
+    </div>
+
+  </div>
+
+  <div class="max-w-4xl mx-auto mt-8 pt-6 border-t border-marfim/10 text-center">
+    <p class="font-corpo text-marfim/40 text-xs">
+      &copy; {{ ano }} {{ profile.nome }}. Todos os direitos reservados.
+    </p>
+  </div>
+</footer>

@@ -1,68 +1,64 @@
-<section class="relative overflow-hidden">
+<section class="relative overflow-hidden bg-gradient-to-br from-marrom via-marrom to-[#2a201c] min-h-[90dvh] md:min-h-screen flex items-center py-16 md:py-0">
 
-<picture #heroImage class="absolute inset-0 w-full h-[120%] -top-[10%]">
-  <source media="(min-width: 768px)" srcset="/../../../photos/simone-hero-desktop.webp">
-  <img
-    src="/../../../photos/simone-hero-mobile.webp"
-    alt="Simone Cordeiro, psicóloga clínica"
-    class="w-full h-full object-cover object-top md:object-center"
-  >
-</picture>
+  <div appAnimateOnScroll [enabled]="intro.finished()" class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row md:items-center md:gap-12 w-full">
 
-  <!-- Versão mobile -->
-  <div class="relative min-h-[85dvh] flex items-end md:hidden">
-    <div class="absolute inset-0 bg-linear-to-t from-marrom/90 via-marrom/60 to-transparent"></div>
-    <div class="relative z-10 px-6 pb-10 w-full">
-      <div appAnimateOnScroll [enabled]="intro.finished()">
-        <ng-container *ngTemplateOutlet="conteudo"></ng-container>
+    <div class="anim-item order-1 md:order-2 md:w-2/5 relative mb-6 md:mb-0" style="--delay: 0ms">
+
+      <div class="relative aspect-[3/4] rounded-2xl overflow-visible bg-cover bg-center frame-glow" style="background-image: url('photos/fundo.svg')">
+
+        <img
+          src="photos/simone4.webp"
+          alt="Simone Cordeiro, psicóloga clínica"
+          class="absolute top-0 left-[15%] w-[100%] max-w-none drop-shadow-2xl photo-fade-bottom"
+        >
+
+        <div class="absolute bottom-0 left-0 right-0 h-10 rounded-b-2xl bg-gradient-to-t from-marrom/70 to-transparent pointer-events-none"></div>
+
+        <div class="floating-dot dot-1"></div>
+        <div class="floating-dot dot-2"></div>
+        <div class="floating-dot dot-3"></div>
+        <div class="floating-dot dot-4"></div>
+        <div class="floating-dot dot-5"></div>
+
       </div>
-    </div>
-  </div>
 
-  <!-- Versão desktop -->
-  <div class="hidden md:flex md:items-center md:min-h-[110dvh]">
-    <div class="absolute inset-0 bg-linear-to-r from-marrom/95 via-marrom/60 to-transparent"></div>
-    <div class="relative z-10 px-16 w-full max-w-xl">
-      <div appAnimateOnScroll [enabled]="intro.finished()">
-        <ng-container *ngTemplateOutlet="conteudo"></ng-container>
-      </div>
     </div>
+
+    <div class="order-2 md:order-1 md:w-3/5">
+
+      <div class="anim-item flex items-center gap-3 mb-4" style="--delay: 100ms">
+        <span class="w-8 h-px bg-champagne"></span>
+        <p class="font-corpo text-champagne tracking-widest text-xs md:text-sm uppercase">
+          {{ profile.profissao }} · TCC
+        </p>
+      </div>
+
+      <h1 class="anim-item font-titulo text-marfim text-4xl md:text-6xl leading-tight mb-4" style="--delay: 150ms">
+        Cuidar da mente também é <em class="text-champagne not-italic font-normal">um ato de coragem</em>.
+      </h1>
+
+      <p class="anim-item font-corpo text-marfim/90 text-sm md:text-lg max-w-md leading-relaxed mb-6" style="--delay: 300ms">
+        Atendimento com base na Terapia Cognitivo-Comportamental, para crianças, adolescentes e adultos — presencial ou online.
+      </p>
+
+      <div class="anim-item flex flex-col sm:flex-row gap-3" style="--delay: 450ms">
+        <a [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
+          target="_blank"
+          rel="noopener"
+          class="shiny-btn flex items-center justify-center gap-2 bg-sage text-marfim px-6 py-3 rounded-full font-corpo font-medium hover:bg-champagne hover:text-marrom transition-all duration-300"
+        >
+          Agendar consulta
+        </a>
+
+        <a href="#sobre"
+          class="flex items-center justify-center gap-2 border border-marfim/50 text-marfim px-6 py-3 rounded-full font-corpo hover:bg-marfim/10 transition-all duration-300"
+        >
+          Conhecer a Simone
+        </a>
+      </div>
+
+    </div>
+
   </div>
 
 </section>
-
-<!-- Conteúdo compartilhado entre as duas versões -->
-<ng-template #conteudo>
-
-  <div class="anim-item flex items-center gap-3 mb-2 md:mb-4" style="--delay: 0ms">
-    <span class="w-8 h-px bg-champagne"></span>
-    <p class="font-corpo text-champagne tracking-widest text-xs md:text-sm uppercase">
-      {{ profile.profissao }} · TCC
-    </p>
-  </div>
-
-  <h1 class="anim-item font-titulo text-marfim text-4xl md:text-6xl leading-tight mb-4" style="--delay: 150ms">
-    Cuidar da mente também é <em class="text-champagne not-italic font-normal">um ato de coragem</em>.
-  </h1>
-
-  <p class="anim-item font-corpo text-marfim/90 text-sm md:text-lg max-w-md leading-relaxed mb-6" style="--delay: 300ms">
-    Atendimento com base na Terapia Cognitivo-Comportamental, para crianças, adolescentes e adultos — presencial ou online.
-  </p>
-
-  <div class="anim-item flex flex-col sm:flex-row gap-3" style="--delay: 450ms">
-    <a [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center justify-center gap-2 bg-sage text-marfim px-6 py-3 rounded-full font-corpo font-medium hover:bg-marrom transition-all duration-300"
-    >
-      Agendar consulta
-    </a>
-
-    <a href="#sobre"
-      class="flex items-center justify-center gap-2 border border-marfim/50 text-marfim px-6 py-3 rounded-full font-corpo hover:bg-marfim/10 transition-all duration-300"
-    >
-      Conhecer a Simone
-    </a>
-  </div>
-
-</ng-template>
