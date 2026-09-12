@@ -18,7 +18,7 @@ export class Seo {
     this.meta.updateTag({ property: 'og:title', content: title });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:image', content: 'https://simonecordeiro.vercel.app/images/icons/logo.svg' });
+    this.meta.updateTag({ property: 'og:image', content: 'https://simonecordeiro.vercel.app/icons/logo.svg' });
     this.meta.updateTag({ property: 'og:locale', content: 'pt_BR' });
 
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
