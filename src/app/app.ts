@@ -2,6 +2,7 @@ import { Component, OnInit, PLATFORM_ID, Inject, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { Intro } from './core/intro';
+import { Seo } from './core/seo';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +17,15 @@ export class App implements OnInit {
 
   constructor(
     @Inject(PLATFORM_ID) platformId: Object,
-    private intro: Intro
+    private intro: Intro,
+    private seo: Seo
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
+    this.seo.setTags();
+
     if (!this.isBrowser) {
       this.showIntro.set(false);
       this.intro.finished.set(true);
@@ -33,10 +37,10 @@ export class App implements OnInit {
     }, 2000);
   }
 
-onWipeEnd(event: AnimationEvent) {
-  if (event.animationName.includes('wipe-up')) {
-    this.showIntro.set(false);
-    this.intro.finished.set(true);
+  onWipeEnd(event: AnimationEvent) {
+    if (event.animationName.includes('wipe-up')) {
+      this.showIntro.set(false);
+      this.intro.finished.set(true);
+    }
   }
-}
 }
