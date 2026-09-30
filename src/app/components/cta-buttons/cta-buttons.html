@@ -20,13 +20,13 @@
       Marque uma conversa inicial e descubra como a terapia pode te acompanhar nesse momento.
     </p>
 
-    <a [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
+    <a [href]="whatsappLink"
       target="_blank"
       rel="noopener"
       class="anim-item cta-glow cta-pulse inline-flex items-center justify-center gap-2 bg-sage text-marfim px-8 py-4 rounded-full font-corpo font-medium text-base hover:bg-champagne hover:text-marrom transition-all duration-300 hover:scale-105"
       style="--delay: 300ms"
     >
-      <img src="icons/whatsapp.svg" alt="" class="w-5 h-5" />
+      <img src="icons/whatsapp.svg" alt="" class="w-5 h-5" width="20" height="20" aria-hidden="true">
       Agendar consulta pelo WhatsApp
     </a>
 

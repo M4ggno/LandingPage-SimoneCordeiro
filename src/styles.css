@@ -1,17 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "tailwindcss";
 
 @theme {
   --color-marrom: #3B2F2A;
   --color-champagne: #C9A876;
   --color-taupe: #8C7A6B;
-
-
   --color-marfim: #FAF7F2;
   --color-sage: #9CAA96;
 
+  --font-titulo: "Fraunces", "Georgia", serif;
+  --font-corpo: "Inter", "system-ui", sans-serif;
+}
 
-  --font-titulo: "Playfair Display", "Georgia", serif;
-  --font-corpo: "Jost", "Montserrat", sans-serif;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-corpo);
+  background-color: var(--color-marfim);
+  color: var(--color-marrom);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-champagne);
+  color: var(--color-marrom);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

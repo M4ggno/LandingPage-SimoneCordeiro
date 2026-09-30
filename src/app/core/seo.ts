@@ -6,7 +6,7 @@ export class Seo {
   private title = inject(Title);
   private meta = inject(Meta);
 
-  setTags() {
+  setTags(): void {
     const title = 'Simone Cordeiro | Psicóloga Clínica em Patos - PB';
     const description = 'Psicóloga clínica com mais de 10 anos de experiência. Atendimento presencial e online com base na Terapia Cognitivo-Comportamental (TCC), para crianças, adolescentes e adultos.';
 

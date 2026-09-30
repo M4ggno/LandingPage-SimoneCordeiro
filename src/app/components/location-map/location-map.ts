@@ -1,4 +1,4 @@
-import { Component, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, PLATFORM_ID, Inject, ChangeDetectionStrategy, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Profile } from '../../core/profile';
@@ -8,9 +8,11 @@ import { AnimateOnScroll } from '../../core/animate-on-scroll';
   selector: 'app-location-map',
   imports: [AnimateOnScroll],
   templateUrl: './location-map.html',
-  styleUrl: './location-map.css'
+  styleUrl: './location-map.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LocationMap {
+  protected readonly profile = inject(Profile);
   mapUrl: SafeResourceUrl;
   directionsUrl: string;
 
@@ -18,7 +20,6 @@ export class LocationMap {
   private readonly lng = -37.2746537;
 
   constructor(
-    public profile: Profile,
     private sanitizer: DomSanitizer,
     @Inject(PLATFORM_ID) platformId: Object
   ) {

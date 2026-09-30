@@ -22,17 +22,16 @@
       O acompanhamento psicológico pode ajudar na compreensão e no enfrentamento de diferentes questões emocionais e comportamentais.
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" role="list">
       @for (demanda of demandas; track demanda; let i = $index) {
         <span
           class="anim-item-bounce tag-chip tag-pulse inline-flex items-center justify-center text-center font-corpo text-sm md:text-base px-4 py-3 rounded-full border transition-all duration-300"
           [style]="'--delay: ' + (250 + i * 60) + 'ms; --pulse-delay: ' + (i * 400) + 'ms'"
+          role="listitem"
         >
           {{ demanda }}
         </span>
       }
-
     </div>
 
   </div>

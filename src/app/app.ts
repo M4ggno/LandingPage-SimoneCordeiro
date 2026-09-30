@@ -1,4 +1,4 @@
-import { Component, OnInit, PLATFORM_ID, Inject, signal } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { Intro } from './core/intro';
@@ -8,7 +8,8 @@ import { Seo } from './core/seo';
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App implements OnInit {
   showIntro = signal(true);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { Profile } from '../../core/profile';
 import { Intro } from '../../core/intro';
 import { AnimateOnScroll } from '../../core/animate-on-scroll';
@@ -7,8 +7,14 @@ import { AnimateOnScroll } from '../../core/animate-on-scroll';
   selector: 'app-about',
   imports: [AnimateOnScroll],
   templateUrl: './about.html',
-  styleUrl: './about.css'
+  styleUrl: './about.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class About {
-  constructor(public profile: Profile, public intro: Intro) {}
+  protected readonly profile = inject(Profile);
+  protected readonly intro = inject(Intro);
+
+  get whatsappLink(): string {
+    return `https://wa.me/${this.profile.whatsapp}?text=${encodeURIComponent('Olá, gostaria de agendar uma consulta')}`;
+  }
 }

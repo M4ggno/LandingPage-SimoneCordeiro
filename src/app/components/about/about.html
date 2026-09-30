@@ -10,6 +10,8 @@
           src="photos/simone4.webp"
           alt="Simone Cordeiro, psicóloga clínica"
           class="absolute top-0 left-[15%] w-[100%] max-w-none drop-shadow-2xl photo-fade-bottom"
+          loading="eager"
+          fetchpriority="high"
         >
 
         <div class="absolute bottom-0 left-0 right-0 h-10 rounded-b-2xl bg-gradient-to-t from-marrom/70 to-transparent pointer-events-none"></div>
@@ -42,7 +44,7 @@
       </p>
 
       <div class="anim-item flex flex-col sm:flex-row gap-3" style="--delay: 450ms">
-        <a [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
+        <a [href]="whatsappLink"
           target="_blank"
           rel="noopener"
           class="shiny-btn flex items-center justify-center gap-2 bg-sage text-marfim px-6 py-3 rounded-full font-corpo font-medium hover:bg-champagne hover:text-marrom transition-all duration-300"

@@ -1,19 +1,24 @@
-import { Component, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, inject } from '@angular/core';
 import { Profile } from '../../core/profile';
 import { AnimateOnScroll } from '../../core/animate-on-scroll';
+
+interface FaqItem {
+  pergunta: string;
+  resposta: string;
+}
 
 @Component({
   selector: 'app-faq',
   imports: [AnimateOnScroll],
   templateUrl: './faq.html',
-  styleUrl: './faq.css'
+  styleUrl: './faq.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Faq {
-  aberto = signal<number | null>(null);
+  protected readonly profile = inject(Profile);
+  protected readonly aberto = signal<number | null>(null);
 
-  constructor(public profile: Profile) {}
-
-  perguntas = [
+  protected readonly perguntas: FaqItem[] = [
     {
       pergunta: 'Como funciona a primeira sessão?',
       resposta: 'A primeira sessão é um momento de acolhimento e escuta. É quando você poderá falar sobre o que está vivendo, suas dificuldades, expectativas e o que te levou a buscar acompanhamento psicológico. A partir desse primeiro encontro, é possível compreender melhor a sua necessidade e conversar sobre os próximos passos.'
@@ -56,7 +61,11 @@ export class Faq {
     }
   ];
 
-  toggle(index: number) {
+  get whatsappLink(): string {
+    return `https://wa.me/${this.profile.whatsapp}?text=${encodeURIComponent('Olá, tenho uma dúvida')}`;
+  }
+
+  toggle(index: number): void {
     this.aberto.set(this.aberto() === index ? null : index);
   }
 }

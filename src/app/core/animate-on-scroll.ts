@@ -18,18 +18,18 @@ export class AnimateOnScroll implements AfterViewInit, OnChanges {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.viewReady = true;
     if (this.enabled) this.start();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes['enabled'] && this.enabled && this.viewReady && !this.started) {
       this.start();
     }
   }
 
-  private start() {
+  private start(): void {
     if (!this.isBrowser || this.started) return;
     this.started = true;
 

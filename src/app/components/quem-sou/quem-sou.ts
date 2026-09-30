@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { Profile } from '../../core/profile';
 import { AnimateOnScroll } from '../../core/animate-on-scroll';
 
@@ -6,9 +6,13 @@ import { AnimateOnScroll } from '../../core/animate-on-scroll';
   selector: 'app-quem-sou',
   imports: [AnimateOnScroll],
   templateUrl: './quem-sou.html',
-  styleUrl: './quem-sou.css'
+  styleUrl: './quem-sou.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuemSou {
-demandas: any;
-  constructor(public profile: Profile) {}
+  protected readonly profile = inject(Profile);
+
+  get whatsappLink(): string {
+    return `https://wa.me/${this.profile.whatsapp}?text=${encodeURIComponent('Olá, gostaria de agendar uma consulta')}`;
+  }
 }

@@ -1,0 +1,18 @@
+{
+  "name": "Simone Cordeiro | Psicóloga Clínica",
+  "short_name": "Simone Cordeiro",
+  "description": "Psicóloga clínica com mais de 10 anos de experiência. Atendimento presencial e online com base na Terapia Cognitivo-Comportamental (TCC).",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#3B2F2A",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icons/logo-SC.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

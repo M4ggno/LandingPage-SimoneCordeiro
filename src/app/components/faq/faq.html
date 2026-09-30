@@ -22,9 +22,10 @@
           <button
             (click)="toggle(i)"
             class="w-full flex items-center justify-between gap-4 text-left px-5 py-4 font-corpo font-medium text-marrom"
+            [attr.aria-expanded]="aberto() === i"
           >
             <span>{{ item.pergunta }}</span>
-            <span class="shrink-0 transition-transform duration-300" [class.rotate-45]="aberto() === i">+</span>
+            <span class="shrink-0 transition-transform duration-300" [class.rotate-45]="aberto() === i" aria-hidden="true">+</span>
           </button>
 
           @if (aberto() === i) {
@@ -38,7 +39,7 @@
 
     <div class="anim-item mt-10 text-center" style="--delay: 400ms">
       <a
-        [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20tenho%20uma%20dúvida'"
+        [href]="whatsappLink"
         target="_blank"
         rel="noopener"
         class="shiny-btn inline-flex items-center justify-center gap-2 bg-sage text-marfim px-6 py-3 rounded-full font-corpo font-medium hover:bg-marrom transition-all duration-300"

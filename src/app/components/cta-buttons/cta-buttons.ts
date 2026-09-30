@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, PLATFORM_ID, Inject, ChangeDetectionStrategy, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Profile } from '../../core/profile';
 import { AnimateOnScroll } from '../../core/animate-on-scroll';
@@ -7,14 +7,21 @@ import { AnimateOnScroll } from '../../core/animate-on-scroll';
   selector: 'app-cta-buttons',
   imports: [AnimateOnScroll],
   templateUrl: './cta-buttons.html',
-  styleUrl: './cta-buttons.css'
+  styleUrl: './cta-buttons.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CtaButtons {
   @ViewChild('dotsLayer') dotsLayer?: ElementRef<HTMLElement>;
   private isBrowser: boolean;
 
-  constructor(public profile: Profile, @Inject(PLATFORM_ID) platformId: Object) {
+  protected readonly profile = inject(Profile);
+
+  constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
+  }
+
+  get whatsappLink(): string {
+    return `https://wa.me/${this.profile.whatsapp}?text=${encodeURIComponent('Olá, gostaria de agendar uma consulta')}`;
   }
 
   @HostListener('window:scroll')

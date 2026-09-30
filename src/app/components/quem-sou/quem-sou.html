@@ -1,13 +1,13 @@
 <section id="sobre" class="relative bg-marfim px-6 py-16 md:py-24 overflow-hidden">
   <div appAnimateOnScroll class="max-w-5xl mx-auto flex flex-col md:flex-row md:gap-16 md:items-center">
 
-    <div class="anim-item .mb-[-60px] md:mb-0 md:w-2/5 shrink-0 relative z-0" style="--delay: 0ms">
+    <div class="anim-item mb-[-60px] md:mb-0 md:w-2/5 shrink-0 relative z-0" style="--delay: 0ms">
       <img
         src="photos/simone3.webp"
         alt="Simone Cordeiro, psicóloga clínica"
-        class="w-full object-cover .aspect-[4/5] photo-blend"
+        class="w-full object-cover aspect-[4/5] photo-blend"
+        loading="lazy"
       >
-
     </div>
 
     <div class="md:w-3/5 relative z-10">
@@ -44,8 +44,9 @@
         <span class="text-marrom"><strong class="text-champagne">+10 anos</strong> · Experiência clínica</span>
         <span class="text-marrom"><strong class="text-champagne">TCC</strong> · Especialidade</span>
       </div>
+
       <a
-        [href]="'https://wa.me/' + profile.whatsapp + '?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta'"
+        [href]="whatsappLink"
         target="_blank"
         rel="noopener"
         class="anim-item shiny-btn inline-flex items-center justify-center gap-2 bg-sage text-marfim px-6 py-3 rounded-full font-corpo font-medium transition-all duration-300"

@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AnimateOnScroll } from '../../core/animate-on-scroll';
 
 @Component({
   selector: 'app-como-ajudo',
   imports: [AnimateOnScroll],
   templateUrl: './como-ajudo.html',
-  styleUrl: './como-ajudo.css'
+  styleUrl: './como-ajudo.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComoAjudo {
-  demandas = [
+  protected readonly demandas = [
     'Ansiedade no dia a dia',
     'Autoestima e autoconfiança',
     'Momentos de tristeza e desânimo',
