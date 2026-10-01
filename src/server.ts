@@ -77,7 +77,6 @@ interface ClientData {
 const clients = new Map<string, ClientData>();
 
 const SUSPICIOUS_PATHS = [
-  '.well-known',
   'wp-admin',
   'wp-login',
   'wp-content',
@@ -100,9 +99,6 @@ const SUSPICIOUS_PATHS = [
   'web.config',
   'crossdomain.xml',
   'clientaccesspolicy.xml',
-  'sitemap.xml',
-  'robots.txt',
-  'favicon.ico',
 ];
 
 const SUSPICIOUS_PATTERNS = [
