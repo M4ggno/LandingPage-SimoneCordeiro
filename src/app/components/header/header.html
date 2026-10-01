@@ -1,22 +1,23 @@
-<header class="flex items-center justify-between px-6 py-4 bg-marfim sticky top-0 z-50 shadow-sm">
-  <a href="/" class="flex items-center gap-3" aria-label="Voltar ao início">
+<header class="flex items-center justify-between gap-2 px-4 py-3 md:px-6 md:py-4 bg-marfim sticky top-0 z-50 shadow-sm">
+  <a href="/" class="flex items-center gap-2 md:gap-3 min-w-0" aria-label="Voltar ao início">
     <img
       src="icons/logo-SC.svg"
       alt="Simone Cordeiro - Psicóloga"
-      class="h-10 md:h-12"
+      class="h-8 md:h-12 shrink-0"
       width="48"
       height="48"
     >
-    <span class="font-titulo text-marrom text-sm md:text-base">Simone Cordeiro</span>
+    <span class="font-titulo text-marrom text-xs sm:text-sm md:text-base truncate">Simone Cordeiro</span>
   </a>
 
   <a
     [href]="whatsappLink"
     target="_blank"
     rel="noopener"
-    class="shiny-btn flex items-center gap-2 bg-sage text-marfim px-4 py-2 md:px-5 md:py-2.5 rounded-full font-corpo font-medium text-sm md:text-base hover:bg-marrom transition-all duration-300 hover:scale-105"
+    class="shiny-btn flex items-center justify-center gap-1.5 md:gap-2 bg-sage text-marfim px-3 py-2 md:px-5 md:py-2.5 rounded-full font-corpo font-medium text-xs sm:text-sm md:text-base whitespace-nowrap shrink-0 hover:bg-marrom transition-all duration-300 hover:scale-105"
   >
-    <img src="icons/whatsapp.svg" alt="" class="w-4 h-4 md:w-5 md:h-5" width="20" height="20" aria-hidden="true">
-    Agendar consulta
+    <img src="icons/whatsapp.svg" alt="" class="w-3.5 h-3.5 md:w-5 md:h-5" width="20" height="20" aria-hidden="true">
+    <span class="hidden min-[400px]:inline">Agendar consulta</span>
+    <span class="min-[400px]:hidden">Agendar</span>
   </a>
 </header>
